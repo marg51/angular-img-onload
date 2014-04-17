@@ -2,6 +2,8 @@
 
 ![](http://i.uto.io/zM2Mz)
 
+[See this DEMO](http://img-onload.uto.io/public/index.html)
+
 # Install
 
 ```
@@ -59,6 +61,16 @@ div.img-onload-error img {
 	opacity: 0;
 }
 ```
+
+# Run the demo 
+
+```
+npm install
+bower install
+grunt
+```
+
+and go to `/public/index.html`
 
 # License 
 
