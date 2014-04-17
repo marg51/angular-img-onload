@@ -1,0 +1,24 @@
+!!!5
+html(ng-app="uto.img-onload")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport",content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
+		title Dev
+		script(src="deps.js")
+		script(src="app.js")
+		link(href="app.css",rel='stylesheet')
+	body
+		h1 Image Soft Load 
+		
+		input(ng-model='form.img',placeholder='Image URL')
+		br
+		div.img-container
+			h3 Before
+			img(src='{{form.img}}')
+			
+		div.img-container
+			h3 After
+			img.transition(ng-src='{{form.img}}')
+			div.img-not-available-text Error !
+			div.img-onload-text 
+				img(src='../ajax-loader.gif')

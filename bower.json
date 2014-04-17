@@ -1,0 +1,24 @@
+{
+  "name": "angular-img-onload",
+  "version": "0.0.1",
+  "authors": [
+    "Laurent Margirier <laurent.margirier@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets",
+    "public",
+    "test",
+    "ajax-loader.gif",
+    "bower.json",
+    "Gruntfile.coffee",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16"
+  }
+}
