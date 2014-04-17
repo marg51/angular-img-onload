@@ -7,7 +7,7 @@
 # Install
 
 ```
-bower install https://github.com/marg51/angular-img-onload
+bower install https://github.com/marg51/angular-img-onload.git#0.0.1
 ```
 
 add `bower_components/angular-img-onload/dist/angular-img-onload.js` to your files
