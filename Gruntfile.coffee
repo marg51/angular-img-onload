@@ -5,6 +5,8 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks "grunt-contrib-jade"
 	grunt.loadNpmTasks "grunt-contrib-less"
 	grunt.loadNpmTasks "grunt-contrib-concat"
+	grunt.loadNpmTasks "grunt-ngmin"
+	grunt.loadNpmTasks "grunt-contrib-uglify"
 
 	grunt.initConfig
 		pkg: grunt.file.readJSON('package.json'),
@@ -18,6 +20,18 @@ module.exports = (grunt) ->
 			prod: 
 				files:
 					'./dist/angular-img-onload.js': ['assets/coffee/*.coffee']
+		ngmin:
+			prod:
+				src: ["./dist/angular-img-onload.js"]
+				dest: "./dist/angular-img-onload.min.js"
+		uglify:
+			banner: "/* ©Laurent Margirier */"
+			prod:
+				files: [{
+					dest: "./dist/angular-img-onload.min.js"
+					src: ["./dist/angular-img-onload.min.js"]
+				}]
+					
 		jade: 
 			dev: 
 				options: 
@@ -62,7 +76,7 @@ module.exports = (grunt) ->
 				autoWatch: false
 				singleRun: true
 
-	grunt.registerTask 'build', ['coffee:prod']
+	grunt.registerTask 'build', ['coffee:prod','ngmin','uglify:prod']
 	grunt.registerTask 'default', ['clean','concat:prod','coffee:dev','jade:dev','less:dev']
 	grunt.registerTask 'watch', ['clean','coffee:dev','jade:dev','less:dev','watch:assets']
 	grunt.registerTask 'w', ['watch']

@@ -17,8 +17,6 @@
           return parent.removeClass('img-onload img-onload-error');
         });
         return elm.bind('error', function() {
-          console.log('error');
-          parent.removeClass('img-onload');
           return parent.addClass('img-onload-error');
         });
       }
