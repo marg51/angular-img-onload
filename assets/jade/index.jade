@@ -1,15 +1,19 @@
 !!!5
-html(ng-app="uto.img-onload")
+html(ng-app="demo")
 	head
 		meta(charset="utf-8")
 		meta(name="viewport",content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1")
-		title Dev
-		script(src="deps.js")
-		script(src="app.js")
+		title img-onload
 		link(href="app.css",rel='stylesheet')
 	body
 		h1 Image Soft Load 
-		
+
+		p Try loading an image, for example 
+		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jpg"') this one (241K)
+		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jpg?nocached=true"') or this one (241K)
+		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jp"') or this error
+
+		br
 		input(ng-model='form.img',placeholder='Image URL')
 		br
 		div.img-container
@@ -22,3 +26,13 @@ html(ng-app="uto.img-onload")
 			div.img-not-available-text Error !
 			div.img-onload-text 
 				img(src='../ajax-loader.gif')
+
+
+		script(src="deps.js")
+		script(src="app.js")
+
+		:coffeescript
+			app = angular.module('demo',['uto.img-onload'])
+
+			app.config (imgOnloadProvider) ->
+				imgOnloadProvider.setImage "http://www.gravatar.com/avatar/ed536240583cdfb91799c97c5432268a?d=identicon&s=64"

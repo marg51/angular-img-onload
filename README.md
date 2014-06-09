@@ -1,13 +1,42 @@
 # Image Soft Load
 
-![](http://i.uto.io/zM2Mz)
+[See the DEMO](http://img-onload.uto.io/index.html)
 
-[See this DEMO](http://img-onload.uto.io/public/index.html)
+Animate your freshly loaded images or replace them if the image is not found !
 
-# Install
+
+### Classes
+
+**angular-img-onload** add some classes, describing what is happening with your image
+
+<table>
+	<thead>
+		<tr>
+			<th>class</th>
+			<th>DOM target</th>
+			<th>description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>`.img-onload`</td>
+			<td>img's parent</td>
+			<td>Added when the image is loading, then removed when successfully loaded</td>
+		</tr>
+		<tr>
+			<td>`.img-onload-error`</td>
+			<td>img's parent</td>
+			<td>Added when an error (i.e. 404) occured</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+### Install
 
 ```
-bower install https://github.com/marg51/angular-img-onload.git#0.0.1
+bower install https://github.com/marg51/angular-img-onload.git#0.0.2
 ```
 
 add `bower_components/angular-img-onload/dist/angular-img-onload.js` to your files
@@ -20,19 +49,17 @@ var MyApp = angular.module('MyApp', ['uto.img-onload']);
 
 Each `<img>` with the attribute **`ng-src`** will be affected.
 
-### Classes ?
+### Replace a broken image
 
-#### .img-onload
+```javascript
+	app.config(function(imgOnloadProvider) {
+    	imgOnloadProvider.setImage("http://path/to/new/image");
+	});
+```
 
-When an image is loading, the class `.img-onload` is added **to the parent**. 
 
-When the image is loaded, that class is removed.
 
-#### .img-onload-error
-
-If an error, like a 404 error, the class `.img-onload-error` is added **to the parent** (`.img-onload` is still set)
-
-### Add your css
+### Add your own css
 
 examples of css
 
@@ -62,7 +89,7 @@ div.img-onload-error img {
 }
 ```
 
-# Run the demo 
+### Run the demo 
 
 ```
 npm install
