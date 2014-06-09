@@ -1,6 +1,6 @@
-app = angular.module('uto.img-onload',[])
+app = angular.module('uto.img-onload')
 
-app.directive 'ngSrc', ->
+app.directive 'ngSrc', (imgOnload) ->
 	link: (scope, elm, attrs) ->
 		parent = elm.parent()
 		parent.addClass('img-onload')
@@ -16,4 +16,6 @@ app.directive 'ngSrc', ->
 
 		elm.bind 'error', ->
 			parent.addClass('img-onload-error')
+			if imgOnload.onErrorSrc and elm[0].src isnt imgOnload.onErrorSrc  
+				elm[0].src = imgOnload.onErrorSrc
 
