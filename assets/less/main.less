@@ -1,6 +1,11 @@
 body {
 	background: #333;
 	color: #CCC;
+	width: 510px;
+	margin: 0 auto;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+	letter-spacing: 1px;
 }
 
 .transition {
@@ -10,11 +15,14 @@ body {
 div.img-container {
 	height: 140px;
 	width: 250px;
-	text-align: center;
 	border: 1px solid #CCC;
 	position: relative;
 	float: left;
-	margin: 3px;
+	margin: -1px 0px;
+
+	& + div.img-container {
+		margin-left: 6px;
+	}
 
 	img {
 		opacity: 1;
@@ -68,8 +76,8 @@ div.img-container {
 input {
 	height: 40px;
 	box-sizing: border-box;
-	width: 200px;
-	border: 1px solid #111;
+	width: 510px;
+	border: 1px solid #CCC;
 	background: #555;
 	padding: 5px 20px;
 	color: white;
@@ -78,3 +86,10 @@ input {
 	}
 }
 
+p {
+	font-style: italic;
+}
+
+hr {
+	margin: 50px 40px;
+}

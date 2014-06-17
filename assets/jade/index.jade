@@ -7,11 +7,15 @@ html(ng-app="demo")
 		link(href="app.css",rel='stylesheet')
 	body
 		h1 Image Soft Load 
+		p Improve your UI !
 
-		p Try loading an image, for example 
-		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jpg"') this one (241K)
-		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jpg?nocached=true"') or this one (241K)
-		button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jp"') or this error
+		hr
+		h2 Try loading an image, for example 
+
+		div.button-container
+			button(ng-click='form.img="http://labs.uto.io/img-onload/sample.jpg"') this one (241K)
+			button(ng-click='form.img="http://labs.uto.io/img-onload/sample.png"') or this one (12K)
+			button(ng-click='form.img="http://labs.uto.io/img-onload/sample.txt"') or this error
 
 		br
 		input(ng-model='form.img',placeholder='Image URL')
@@ -35,4 +39,4 @@ html(ng-app="demo")
 			app = angular.module('demo',['uto.img-onload'])
 
 			app.config (imgOnloadProvider) ->
-				imgOnloadProvider.setImage "http://www.gravatar.com/avatar/ed536240583cdfb91799c97c5432268a?d=identicon&s=64"
+				imgOnloadProvider.setImage "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAA51BMVEVksBtlsB1msR5nsSBosiFpsiNstCdstChttClutSpvtStwti13uTd5ujp6uzt6uzx7uz19vEB+vUF/vkOFwUyJw1KKw1OLxFWMxFaZy2mZy2qay2ubzGybzG2ezXGfznKfznOgznSt1Yeu1Yiv1omv1oqx142z2I+z2JC02ZG12ZLC4KXD4KbD4KfE4ajH4q3I467J46/J47DV6cLW6sPX6sTY68bZ68fj8Nbk8djn89zo893o897p9N/r9eLu9uby+Ozz+e70+e/1+vD2+vH2+vL5/Pb6/Pj7/fn8/fr8/fv9/vz///9+OgDqAAAErUlEQVR42sWbaVsaMRSFg8UFBbW2LLUti0tFQW0tQtVicaUV/v/v6TDMkmSykOQMc7+0zgnj+3iTy8x57iWEjWKbqOPnVB3EMS4etzIF2BlPTzIFOJ9OnzYzBNh99W5xliFAd3aL563MAEpj/x6nmQF05vd42cwIoBjepJ0aQKnTrylqQHgTVS1wAdjtejmeDKryGhDGSRoAO+evwZrrck5SA8JQ1AJbgOLFmFrVq0hqQBhnYIBSh1+X3AtdWpbXAhsAP/d88HuhxK45xQHEueeD2Qvc30haC0wB2NzzQe2FPidth7+QiwcNAL++NVStfoxLTm3CKJfh9aljkHzzVqY9ndBbbUBLf/dgAISsNu5EyvMZm+YqLX4nQABC8vV7/vrLaeKgXcfq+AMWwAt2Lzy2BZu8HOs/CByA3gts7qPI9cIFb3spAER7gc99HJXwQ1ckFQB/LwhyTxK1YDstAC+Uj7xBLbgkKQKoY8DWgOUDVNkasHyAWS2gakAGAGWmBmQAkOu97WUKQCpXJFuAxAPH+5JqdeGrTjcG4gEKf7q7srUbx6O6TncGIMfT1/Md0cr1g4fpXV6nuwNseA9h44siv27tcOSpDaLT3QHIgf9vh8l14ch/NrxdJTodALA+mj+kxLn2cjsXm/6fWqkDAMhh8N8g17PczmOY9z+i1BEAa9GjuJfreW7n0QrSrdIRAOSI+pl6L7gPP6PSIQCFkbDI1aMtp9AhAN5ZF8RdPvqQQscAbIheyBpUyZPrGIDgrDPh14Aw5DoIYD2Z5SZTdqU6CCA661EM88zHpDoKYI3Pcosr/TJdC6B7/w/X/eau8y6TTNf5B2TBJ5ovCW+Dddqkuvb+iwG8u0kIZfr3y3UQwGeBw0QDyHUMQP6XQKFcNoWOAdgXKYMYQKFDAFZuRMok8jpVOgTgk1jqhwAqHQIQn/Fhq9JLnnWVjgCIzvht06uvufI1d9aVOgAgPON3jfD7rzqYUGddrQMA5mf8vk5/+9T68VlX6+4A/hkfthJvsb3grGt0d4D9ILeJN/lZrgdEpzsDrNzEuU04OoN/NZ3uDPCxnlf5at90ujMA2h8wBkD7A+abEOwPmAOA/QGLQoT1BywAsP6AzZcR1B+wAYD6A1bPA0h/wAoA6Q/YPZQC/QE7AKA/YPligvMHLAFw/oAlAM4fsAWA+QN6vyBlf8DWIYH5A5YAOH/AEgDnD9gBAP0BOwCgP2AFgPQHrACQ/oAVANIfsAGA+gMWAFh/wAIA6w+YA4D9AXMAsD9gDID2B4wB0P6AcT/B1DH4/sZ2xgDa+YWUAfTzCykD6OcX0gVYYH4hXYDu7MrzVmYAi8wvpAqwwPxCsv8fCFAMr7VN+v+BALr5BXH/Pw5AM78g6//HASjnF+T9/zAA1fyCqv8fBtClrzK1QN3/jwKQzi/o+v9RANL5hYX7/x2HXGTzC2Tx/n83ANn8Alm8/99xzkgyv0AM+v/dACTzC8Sg/98NQDK/QAz6/x0BxPMLxKT/3w1APL9AjPr/nQDE8wvEqP/fDUA4v+Dc+GwCIJpfWCqAaH5huQBVSQ1YGoBgfmHJAGVpDVgSQHJ+YckAyfmF/7SkmwHlrMr7AAAAAElFTkSuQmCC"
