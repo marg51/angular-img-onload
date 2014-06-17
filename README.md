@@ -14,7 +14,7 @@ Animate your freshly loaded images or replace them if the image is not found !
 	<tbody>
 		<tr>
 			<td><img src="http://i.uto.io/TcxOT"/></td>
-			<td><img src="http://i.uto.io/TcxOT"/></td>
+			<td><img src="http://i.uto.io/DA1OD"/></td>
 		</tr>
 	</tbody>
 </table>
