@@ -34,12 +34,12 @@ Animate your freshly loaded images or replace them if the image is not found !
 	</thead>
 	<tbody>
 		<tr>
-			<td>`.img-onload`</td>
+			<td><code>.img-onload</code></td>
 			<td>img's parent</td>
 			<td>Added when the image is loading, then removed when successfully loaded</td>
 		</tr>
 		<tr>
-			<td>`.img-onload-error`</td>
+			<td><code>.img-onload-error</code></td>
 			<td>img's parent</td>
 			<td>Added when an error (i.e. 404) occured</td>
 		</tr>
