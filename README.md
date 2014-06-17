@@ -13,11 +13,12 @@ Animate your freshly loaded images or replace them if the image is not found !
 	</thead>
 	<tbody>
 		<tr>
-			<td>![](http://i.uto.io/TcxOT)</td>
-			<td>![](http://i.uto.io/DA1OD)</td>
+			<td><img src="http://i.uto.io/TcxOT"/></td>
+			<td><img src="http://i.uto.io/TcxOT"/></td>
 		</tr>
 	</tbody>
 </table>
+
 
 ### Classes
 
