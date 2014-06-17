@@ -4,10 +4,24 @@
 
 Animate your freshly loaded images or replace them if the image is not found !
 
+<table>
+	<thead>
+		<tr>
+			<th>while loading</th>
+			<th>When image not found</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>![](http://i.uto.io/TcxOT)</td>
+			<td>![](http://i.uto.io/DA1OD)</td>
+		</tr>
+	</tbody>
+</table>
 
 ### Classes
 
-**angular-img-onload** add some classes, describing what is happening with your image
+**angular-img-onload** add classes, describing the state of the image.
 
 <table>
 	<thead>
