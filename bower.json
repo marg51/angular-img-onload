@@ -1,6 +1,7 @@
 {
   "name": "angular-img-onload",
   "version": "0.0.1",
+  "main": "dist/angular-img-onload.js",
   "authors": [
     "Laurent Margirier <laurent.margirier@gmail.com>"
   ],
